@@ -37,7 +37,7 @@ class CreateTables extends Migration
             $table->float('rating');
             $table->string('address');
             $table->string('city');
-            $table->bool('have_whatsapp');
+            $table->boolean('have_whatsapp');
         });
 
         Schema::create('worker_photos', function (Blueprint $table) {

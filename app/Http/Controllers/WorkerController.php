@@ -24,7 +24,7 @@ class WorkerController extends Controller
         // $this->loggedUser = auth()->user();
     }
 
-    public function create(Request $request)
+    public function createWorker(Request $request)
     {
         $array = ['error' => ''];
         //

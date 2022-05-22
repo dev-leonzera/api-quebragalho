@@ -22,19 +22,19 @@ Route::get('/', function () {
     return ['pong'=>true];
 });
 
-Route::post('/auth/login');
-Route::post('/auth/logout');
-Route::post('/auth/refresh');
-Route::post('/auth/register');
+Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/logout', [AuthController::class, 'logout']);
+Route::post('/auth/refresh', [AuthController::class, 'refresh']);
+Route::post('/auth/register', [AuthController::class, 'register']);
 
-Route::get('/user');
-Route::put('/user');
-Route::post('/user/avatar');
-Route::post('/user/favorite');
-Route::get('/user/favorites');
+Route::get('/user', [UserController::class, 'getUser']);
+Route::put('/user', [UserController::class, 'updateUser']);
+Route::post('/user/avatar', [UserController::class, 'updateAvatar']);
+Route::post('/user/favorite', [UserController::class, 'toogleFavorite']);
+Route::get('/user/favorites', [UserController::class, 'getFavorites']);
 
-Route::post('/workers/create');
-Route::get('/workers');
-Route::get('/workers/{id}');
+Route::post('/workers/create', [WorkerController::class, 'createWorker']);
+Route::get('/workers', [WorkerController::class, 'getWorkers']);
+Route::get('/workers/{id}', [WorkerController::class, 'getWorker']);
 
-Route::get('/search');
+Route::get('/search', [WorkerController::class, 'search']);

@@ -4,7 +4,6 @@ services:
   mysql-db:
     image: mysql:8.0
     container_name: quebragalho_db
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: userapp
       MYSQL_DATABASE: quebragalho_db
@@ -12,3 +11,15 @@ services:
       - "3306:3306"
     cap_add:
       - SYS_NICE
+
+  admin:
+        image: "phpmyadmin/phpmyadmin"
+        ports:
+            - "8060:80"
+        links:
+            - mysql:db
+        depends_on:
+            - mysql
+    #    ports:
+    #
+
