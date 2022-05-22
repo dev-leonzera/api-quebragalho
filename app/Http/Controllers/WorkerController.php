@@ -20,8 +20,8 @@ class WorkerController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api');
-        $this->loggedUser = auth()->user();
+        // $this->middleware('auth:api');
+        // $this->loggedUser = auth()->user();
     }
 
     public function create(Request $request)
